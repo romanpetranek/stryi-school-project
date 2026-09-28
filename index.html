@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрийський ліцей імені Івана Франка | Stryi Ivan Franko Lyceum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- НАВІГАЦІЯ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-brand-500/30">
+                    <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
+                </div>
+                <span class="font-bold text-lg sm:text-xl tracking-wide bg-gradient-to-r from-white via-slate-200 to-brand-400 bg-clip-text text-transparent" data-translate="navTitle">
+                    Івана Франка Ліцей
+                </span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- ПЕРЕМИКАЧ МОВ -->
+                <button onclick="toggleLanguage()" id="langBtn" class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-sm font-semibold border border-slate-700 transition flex items-center space-x-2 shadow-inner">
+                    <i class="fa-solid fa-globe text-brand-400"></i>
+                    <span id="langText">EN / UA</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ГОЛОВНИЙ ЕКРАН (HERO) -->
+    <header class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
+                <i class="fa-solid fa-star text-xs"></i>
+                <span data-translate="badge">Комунальний заклад освіти високого стандарту</span>
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6" data-translate="mainTitle">
+                Стрийський ліцей<br><span class="bg-gradient-to-r from-brand-400 to-emerald-300 bg-clip-text text-transparent">імені Івана Франка</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-10" data-translate="mainSubtitle">
+                Сучасний освітній простір для майбутнього покоління у місті Стрий.
+            </p>
+        </div>
+    </header>
+
+    <!-- ОСНОВНИЙ КОНТЕЙНЕР -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-16">
+
+        <!-- ФАКТИ ПРО ЗАКЛАД -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/80 shadow-xl relative overflow-hidden group hover:border-brand-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3 class="text-slate-400 text-sm font-medium mb-1" data-translate="card1Title">Адреса</h3>
+                <p class="text-white font-semibold" data-translate="card1Val">вул. 50-річчя УПА, 2, м. Стрий</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/80 shadow-xl relative overflow-hidden group hover:border-brand-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3 class="text-slate-400 text-sm font-medium mb-1" data-translate="card2Title">Директор</h3>
+                <p class="text-white font-semibold" data-translate="card2Val">Юрків Галина Михайлівна</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/80 shadow-xl relative overflow-hidden group hover:border-brand-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <h3 class="text-slate-400 text-sm font-medium mb-1" data-translate="card3Title">Педагогів</h3>
+                <p class="text-white font-semibold" data-translate="card3Val">90 висококласних фахівців</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/80 shadow-xl relative overflow-hidden group hover:border-brand-500/50 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3 class="text-slate-400 text-sm font-medium mb-1" data-translate="card4Title">Потужність</h3>
+                <p class="text-white font-semibold" data-translate="card4Val">1176 учнівських місць</p>
+            </div>
+        </section>
+
+        <!-- АНГЛІЙСЬКИЙ ОПИС (5 ВИМОГ) З АУДІО -->
+        <section class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800 relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-48 h-48 bg-brand-500/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-800 gap-4">
+                <div>
+                    <span class="text-brand-400 font-semibold text-sm tracking-wider uppercase" data-translate="englishSub">Міжнародний проєкт</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1" data-translate="englishTitle">Опис школи англійською мовою</h2>
+                </div>
+                <button onclick="speakText()" class="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium transition shadow-lg shadow-brand-600/30 self-start md:self-auto">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span data-translate="listenBtn">Прослухати вимову</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+                    <span class="text-brand-400 font-bold text-lg">01</span>
+                    <p class="text-slate-200 mt-2 font-medium">My school is Stryi Ivan Franko Lyceum. It is located at 50-richchia UPA Street, 2 in Stryi.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+                    <span class="text-brand-400 font-bold text-lg">02</span>
+                    <p class="text-slate-200 mt-2 font-medium">There are modern classrooms, a big gym, a library, a computer class, and a cozy cafeteria.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+                    <span class="text-brand-400 font-bold text-lg">03</span>
+                    <p class="text-slate-200 mt-2 font-medium">My favourite lesson is English, and I really like my friendly classmates and supportive teachers.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800">
+                    <span class="text-brand-400 font-bold text-lg">04</span>
+                    <p class="text-slate-200 mt-2 font-medium">I don't like getting up early and doing too much homework, and there isn't a swimming pool.</p>
+                </div>
+                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 md:col-span-2">
+                    <span class="text-brand-400 font-bold text-lg">05</span>
+                    <p class="text-slate-200 mt-2 font-medium">Overall, I love my school because it provides a great education and has a wonderful atmosphere!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФОТОГАЛЕРЕЯ ЗІ ЗБЕРЕЖЕНИМИ ФАЙЛАМИ -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3" data-translate="galleryTitle">Фотогалерея закладу</h2>
+                <p class="text-slate-400" data-translate="gallerySub">Натисніть на фото, щоб збільшити його</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- ФОТО 1: Директорка -->
+                <div onclick="openModal(this)" class="group relative overflow-hidden rounded-2xl glass-card border border-slate-800 cursor-pointer shadow-xl">
+                    <img src="7e7ef2ab-25c7-4aa5-9172-f4b514a2d90d.png" alt="Директорка" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider" data-translate="ph1Role">Директор</span>
+                        <h3 class="text-white font-bold text-lg leading-snug" data-translate="ph1Name">Юрків Галина Михайлівна</h3>
+                    </div>
+                </div>
+
+                <!-- ФОТО 2: Вид ліцею -->
+                <div onclick="openModal(this)" class="group relative overflow-hidden rounded-2xl glass-card border border-slate-800 cursor-pointer shadow-xl">
+                    <img src="209bf7eb-00e9-4ec9-86cf-1d8f0dafc948.jpg" alt="Вигляд ліцею" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider" data-translate="ph2Role">Будівля</span>
+                        <h3 class="text-white font-bold text-lg leading-snug" data-translate="ph2Name">Вигляд ліцею</h3>
+                    </div>
+                </div>
+
+                <!-- ФОТО 3: Територія -->
+                <div onclick="openModal(this)" class="group relative overflow-hidden rounded-2xl glass-card border border-slate-800 cursor-pointer shadow-xl">
+                    <img src="68327390-3261-4c0c-a9fa-a1e1d75cb377.jpg" alt="Територія" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider" data-translate="ph3Role">Подвір'я</span>
+                        <h3 class="text-white font-bold text-lg leading-snug" data-translate="ph3Name">Територія ліцею</h3>
+                    </div>
+                </div>
+
+                <!-- ФОТО 4: Їдальня -->
+                <div onclick="openModal(this)" class="group relative overflow-hidden rounded-2xl glass-card border border-slate-800 cursor-pointer shadow-xl">
+                    <img src="f763ffef-58d6-4c99-b282-173e820dadf8.jpg" alt="Їдальня" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider" data-translate="ph4Role">Харчування</span>
+                        <h3 class="text-white font-bold text-lg leading-snug" data-translate="ph4Name">Шкільна їдальня</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- МОДАЛЬНЕ ВІКНО ДЛЯ ФОТО -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex items-center justify-center">
+            <button class="absolute -top-12 right-0 text-white text-2xl hover:text-brand-400 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modalImg" src="" alt="Zoomed" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain border border-slate-800">
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-10 text-center text-slate-500 text-sm">
+        <p data-translate="footerText">&copy; 2026 Стрийський ліцей імені Івана Франка. Міжнародний проєкт.</p>
+    </footer>
+
+    <!-- СКРИПТИ -->
+    <script>
+        let currentLang = 'uk';
+
+        const translations = {
+            uk: {
+                navTitle: "Івана Франка Ліцей",
+                badge: "Комунальний заклад освіти високого стандарту",
+                mainTitle: "Стрийський ліцей<br><span class='bg-gradient-to-r from-brand-400 to-emerald-300 bg-clip-text text-transparent'>імені Івана Франка</span>",
+                mainSubtitle: "Сучасний освітній простір для майбутнього покоління у місті Стрий.",
+                card1Title: "Адреса",
+                card1Val: "вул. 50-річчя УПА, 2, м. Стрий",
+                card2Title: "Директор",
+                card2Val: "Юрків Галина Михайлівна",
+                card3Title: "Педагогів",
+                card3Val: "90 висококласних фахівців",
+                card4Title: "Потужність",
+                card4Val: "1176 учнівських місць",
+                englishSub: "Міжнародний проєкт",
+                englishTitle: "Опис школи англійською мовою",
+                listenBtn: "Прослухати вимову",
+                galleryTitle: "Фотогалерея закладу",
+                gallerySub: "Натисніть на фото, щоб збільшити його",
+                ph1Role: "Директор",
+                ph1Name: "Юрків Галина Михайлівна",
+                ph2Role: "Будівля",
+                ph2Name: "Вигляд ліцею",
+                ph3Role: "Подвір'я",
+                ph3Name: "Територія ліцею",
+                ph4Role: "Харчування",
+                ph4Name: "Шкільна їдальня",
+                footerText: "&copy; 2026 Стрийський ліцей імені Івана Франка. Міжнародний проєкт."
+            },
+            en: {
+                navTitle: "Ivan Franko Lyceum",
+                badge: "High Standard Public Educational Institution",
+                mainTitle: "Stryi Ivan Franko<br><span class='bg-gradient-to-r from-brand-400 to-emerald-300 bg-clip-text text-transparent'>Lyceum</span>",
+                mainSubtitle: "Modern educational environment for the future generation in Stryi.",
+                card1Title: "Address",
+                card1Val: "50-richchia UPA St, 2, Stryi",
+                card2Title: "Principal",
+                card2Val: "Halyna Yurkiv",
+                card3Title: "Teachers",
+                card3Val: "90 qualified specialists",
+                card4Title: "Capacity",
+                card4Val: "1176 student places",
+                englishSub: "International Project",
+                englishTitle: "School Description in English",
+                listenBtn: "Listen to Pronunciation",
+                galleryTitle: "School Gallery",
+                gallerySub: "Click on any photo to zoom in",
+                ph1Role: "Principal",
+                ph1Name: "Halyna Yurkiv",
+                ph2Role: "Building",
+                ph2Name: "Lyceum Building",
+                ph3Role: "Territory",
+                ph3Name: "School Yard",
+                ph4Role: "Canteen",
+                ph4Name: "School Cafeteria",
+                footerText: "&copy; 2026 Stryi Ivan Franko Lyceum. International Project."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'uk' ? 'en' : 'uk';
+            document.getElementById('langText').innerText = currentLang === 'uk' ? 'EN / UA' : 'UA / EN';
+            
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if(translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        function speakText() {
+            const points = [
+                "My school is Stryi Ivan Franko Lyceum. It is located at 50-richchia UPA Street, 2 in Stryi.",
+                "There are modern classrooms, a big gym, a library, a computer class, and a cozy cafeteria.",
+                "My favourite lesson is English, and I really like my friendly classmates and supportive teachers.",
+                "I don't like getting up early and doing too much homework, and there isn't a swimming pool.",
+                "Overall, I love my school because it provides a great education and has a wonderful atmosphere!"
+            ].join(". ");
+
+            const utterance = new SpeechSynthesisUtterance(points);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function openModal(element) {
+            const img = element.querySelector('img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
