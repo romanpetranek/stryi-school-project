@@ -1,0 +1,1 @@
+# stryi-school-project
